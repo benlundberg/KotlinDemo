@@ -8,14 +8,13 @@ import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-
 import clarityapplications.nobelprize.R
 import clarityapplications.nobelprize.activities.ScrollingActivity
 import clarityapplications.nobelprize.adapters.PrizesAdapter
 import clarityapplications.nobelprize.models.Prizes
-import clarityapplications.nobelprize.viewmodels.PrizesViewModel
 import clarityapplications.nobelprize.utils.load
 import clarityapplications.nobelprize.utils.then
+import clarityapplications.nobelprize.viewmodels.PrizesViewModel
 import kotlinx.android.synthetic.main.prizes_fragment.*
 
 class PrizesFragment : Fragment() {

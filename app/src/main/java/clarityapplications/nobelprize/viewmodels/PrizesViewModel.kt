@@ -19,12 +19,4 @@ class PrizesViewModel : ViewModel() {
     }
 }
 
-class PrizesViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
-    RecyclerView.ViewHolder(inflater.inflate(R.layout.list_item_prize, parent, false)) {
 
-    fun bind(prize: Prizes, clickListener: (Prizes) -> Unit) {
-        itemView.list_title?.text = prize.category
-        itemView.list_description?.text = prize.overallMotivation
-        itemView.setOnClickListener { clickListener(prize) }
-    }
-}

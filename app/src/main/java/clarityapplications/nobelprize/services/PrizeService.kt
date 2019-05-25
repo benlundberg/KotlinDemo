@@ -25,8 +25,10 @@ class PrizeService {
 
         try {
 
+            val json = response.body().string()
+
             // Parse response json
-            val rootObject = Gson().fromJson(response.body().string(), RootObject::class.java)
+            val rootObject = Gson().fromJson(json, RootObject::class.java)
 
             // Return prizes
             return rootObject.prizes

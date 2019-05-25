@@ -10,23 +10,16 @@ import clarityapplications.nobelprize.fragments.PrizesFragment
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var textMessage: TextView
-
     private val onNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             R.id.navigation_home -> {
-                textMessage.setText(R.string.title_home)
-                return@OnNavigationItemSelectedListener true
-            }
-            R.id.navigation_dashboard -> {
-                textMessage.setText(R.string.title_prizes)
 
                 // Create and open prize fragment
                 openFragment(PrizesFragment.newInstance())
+
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_notifications -> {
-                textMessage.setText(R.string.title_notifications)
                 return@OnNavigationItemSelectedListener true
             }
         }
@@ -38,8 +31,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         val navView: BottomNavigationView = findViewById(R.id.nav_view)
 
-        textMessage = findViewById(R.id.message)
         navView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
+
+        // Create and open prize fragment
+        openFragment(PrizesFragment.newInstance())
     }
 
     // Opening a fragment for bottom navigation control
