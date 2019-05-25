@@ -6,20 +6,31 @@ import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
 import android.widget.TextView
 import clarityapplications.nobelprize.R
+import clarityapplications.nobelprize.fragments.FavouritesFragment
+import clarityapplications.nobelprize.fragments.LaureatesFragment
 import clarityapplications.nobelprize.fragments.PrizesFragment
 
 class MainActivity : AppCompatActivity() {
 
     private val onNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
-            R.id.navigation_home -> {
+            R.id.navigation_categories -> {
 
                 // Create and open prize fragment
                 openFragment(PrizesFragment.newInstance())
 
                 return@OnNavigationItemSelectedListener true
             }
-            R.id.navigation_notifications -> {
+            R.id.navigation_laureates -> {
+
+                openFragment(LaureatesFragment.newInstance())
+
+                return@OnNavigationItemSelectedListener true
+            }
+            R.id.navigation_favourites -> {
+
+                openFragment(FavouritesFragment.newInstance())
+
                 return@OnNavigationItemSelectedListener true
             }
         }

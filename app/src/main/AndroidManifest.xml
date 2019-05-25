@@ -12,8 +12,13 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
         <activity
-                android:name=".activities.ScrollingActivity"
-                android:label="@string/title_activity_scrolling"
+                android:name=".activities.LaureateDetailActivity"
+                android:label="@string/title_activity_laureate_detail"
+                android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+                android:name=".activities.PrizeDetailActivity"
+                android:label="@string/title_activity_prize_detail"
                 android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity

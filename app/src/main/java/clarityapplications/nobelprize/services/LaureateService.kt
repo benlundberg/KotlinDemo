@@ -1,37 +1,34 @@
 package clarityapplications.nobelprize.services
 
 import clarityapplications.nobelprize.configs.ServiceConfig
-import clarityapplications.nobelprize.models.Prize
+import clarityapplications.nobelprize.models.Laureate
 import clarityapplications.nobelprize.models.RootObject
 import com.google.gson.Gson
 import com.squareup.okhttp.OkHttpClient
 import com.squareup.okhttp.Request
-import java.lang.Exception
+import com.google.gson.reflect.TypeToken
 
-class PrizeService {
 
-    fun getPrizes() : List<Prize> {
 
-        // Create http client
+class LaureateService {
+
+    fun getLaureates() : List<Laureate> {
+
         val httpClient = OkHttpClient()
 
-        // Create request
         val request = Request.Builder()
-            .url(ServiceConfig.GET_PRIZES)
+            .url(ServiceConfig.GET_LAUREATES)
             .build()
 
-        // Execute and get response
         val response = httpClient.newCall(request).execute()
 
         try {
 
             val json = response.body().string()
 
-            // Parse response json
             val rootObject = Gson().fromJson(json, RootObject::class.java)
 
-            // Return prizes
-            return rootObject.prizes
+            return rootObject.laureates
 
         } catch (exception: Exception) {
             throw exception

@@ -2,6 +2,9 @@ package clarityapplications.nobelprize.configs
 
 class ServiceConfig {
     companion object {
-        const val GET_PRIZES = "http://api.nobelprize.org/v1/prize.json?"
+        private val BASE = "http://api.nobelprize.org/v1/"
+
+        val GET_PRIZES = BASE + "prize.json"
+        val GET_LAUREATES = BASE + "laureate.json"
     }
 }

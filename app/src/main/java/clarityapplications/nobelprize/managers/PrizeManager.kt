@@ -1,14 +1,14 @@
 package clarityapplications.nobelprize.managers
 
-import clarityapplications.nobelprize.models.Prizes
+import clarityapplications.nobelprize.models.Prize
 import clarityapplications.nobelprize.services.PrizeService
 
 class PrizeManager {
 
     companion object {
-        private var prizes: List<Prizes>? = null
+        private var prizes: List<Prize>? = null
 
-        fun getPrizes() : List<Prizes>? {
+        fun getPrizes(): List<Prize>? {
 
             if (prizes == null) {
                 prizes = PrizeService().getPrizes()
@@ -17,7 +17,7 @@ class PrizeManager {
             return this.prizes
         }
 
-        fun getPrizeByCategory(category: String, year: Int) : Prizes? {
+        fun getPrizeByCategoryAndYear(category: String, year: Int): Prize? {
             return getPrizes()?.first { it.category == category && it.year == year }
         }
     }

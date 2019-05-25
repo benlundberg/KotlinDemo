@@ -4,25 +4,25 @@
         xmlns:tools="http://schemas.android.com/tools"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        tools:showIn="@layout/activity_scrolling"
+        tools:showIn="@layout/activity_prize_detail"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".activities.ScrollingActivity">
+        tools:context=".activities.PrizeDetailActivity">
 
     <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
         <TextView
                 android:id="@+id/scrolling_description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/text_margin" />
-        <ListView
-                android:id="@+id/list_view_laureates"
+                android:layout_margin="@dimen/text_margin"/>
+        <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler_view_laureates"
                 android:layout_width="match_parent"
-                android:layout_height="502dp">
-        </ListView>
+                android:layout_height="match_parent">
+        </android.support.v7.widget.RecyclerView>
     </LinearLayout>
 
 </android.support.v4.widget.NestedScrollView>
